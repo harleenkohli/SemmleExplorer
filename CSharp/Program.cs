@@ -15,6 +15,8 @@ namespace CSharp
         }
     }
 
+    // TODO: Remember to introduce a semmle voilation please!
+
     public static class UnusedClass
     {
         static string abc = "Eferferg";
