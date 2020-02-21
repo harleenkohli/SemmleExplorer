@@ -14,4 +14,10 @@ namespace CSharp
             Console.Read();
         }
     }
+
+    public static class UnusedClass
+    {
+        static string abc = "Eferferg";
+        static string pqr = "ERgfergretg";
+    }
 }
