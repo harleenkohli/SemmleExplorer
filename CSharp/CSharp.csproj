@@ -43,11 +43,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CallToObsoleteMethodBad.cs" />
+    <Compile Include="CallToObsoleteMethodGood.cs" />
+    <Compile Include="DisposeNotCalledOnExceptionBad.cs" />
+    <Compile Include="DisposeNotCalledOnExceptionGood.cs" />
+    <Compile Include="FormatInvalidBad.cs" />
+    <Compile Include="FormatInvalidGood.cs" />
+    <Compile Include="FormatMissingArgumentBad.cs" />
+    <Compile Include="FormatMissingArgumentGood.cs" />
+    <Compile Include="InconsistentEqualsGetHashCodeBad.cs" />
+    <Compile Include="InconsistentEqualsGetHashCodeGood.cs" />
+    <Compile Include="IncorrectCompareToSignatureBad.cs" />
+    <Compile Include="IncorrectCompareToSignatureGood.cs" />
+    <Compile Include="MissingDisposeCallBad.cs" />
+    <Compile Include="MissingDisposeCallGood.cs" />
+    <Compile Include="MissingDisposeMethodBad.cs" />
+    <Compile Include="MissingDisposeMethodGood.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Queries\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
