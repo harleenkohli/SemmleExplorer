@@ -43,11 +43,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="AbandonSession.cs" />
+    <Compile Include="CleartextStorage.cs" />
+    <Compile Include="CodeInjection.cs" />
+    <Compile Include="CookieWithOverlyBroadDomain.cs" />
+    <Compile Include="CookieWithOverlyBroadDomainFix.cs" />
+    <Compile Include="CookieWithOverlyBroadPath.cs" />
+    <Compile Include="CookieWithOverlyBroadPathFix.cs" />
+    <Compile Include="ExposureOfPrivateInformation.cs" />
+    <Compile Include="HardcodedCredentials.cs" />
+    <Compile Include="InadequateRSAPadding.cs" />
+    <Compile Include="InsecureRandomness.cs" />
+    <Compile Include="InsecureXml.cs" />
+    <Compile Include="InsufficientKeySize.cs" />
+    <Compile Include="LDAPInjection.cs" />
+    <Compile Include="LeftoverDebugCode.cs" />
+    <Compile Include="LocalUnvalidatedArithmetic.cs" />
+    <Compile Include="LogForging.cs" />
+    <Compile Include="MissingAntiForgeryTokenValidation.cs" />
+    <Compile Include="MissingXFrameOptions.cs" />
+    <Compile Include="MissingXMLValidation.cs" />
+    <Compile Include="PersistentCookie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReDoS.cs" />
+    <Compile Include="RegexInjection.cs" />
+    <Compile Include="ResourceInjection.cs" />
+    <Compile Include="SqlInjection.cs" />
+    <Compile Include="TaintedPath.cs" />
+    <Compile Include="UrlRedirect.cs" />
+    <Compile Include="UseOfFileUpload.cs" />
+    <Compile Include="UseOfHtmlInputHidden.cs" />
+    <Compile Include="ValueShadowing.cs" />
+    <Compile Include="ValueShadowingFix.cs" />
+    <Compile Include="ValueShadowingServerVariable.cs" />
+    <Compile Include="ValueShadowingServerVariableFix.cs" />
+    <Compile Include="WeakEncryption.cs" />
+    <Compile Include="XPathInjection.cs" />
+    <Compile Include="XSS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="EmptyPasswordInConfigurationFile.config" />
+    <None Include="PasswordInConfigurationFile.config" />
+    <None Include="Web.config.RequireSSL" />
+    <None Include="Web.config.ASPNetDebugBad" />
+    <None Include="Web.config.ASPNetDebugGood" />
+    <None Include="Web.config.ASPNetDirectoryListingBad" />
+    <None Include="Web.config.ASPNetDirectoryListingGood" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
