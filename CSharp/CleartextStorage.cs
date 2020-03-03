@@ -3,8 +3,9 @@ using System.Web;
 using System.Web.Security;
 
 public class CleartextStorageHandler : IHttpHandler {
+    public bool IsReusable => throw new System.NotImplementedException();
 
-  public void ProcessRequest(HttpContext ctx) {
+    public void ProcessRequest(HttpContext ctx) {
     string accountName = ctx.Request.QueryString["AccountName"];
     // BAD: Setting a cookie value with cleartext sensitive data.
     ctx.Response.Cookies["AccountName"].Value = accountName;

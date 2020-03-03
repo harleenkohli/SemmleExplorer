@@ -1,9 +1,12 @@
 using System;
 using System.Web;
 using System.Xml.XPath;
+using System.Xml.Xsl;
 
 public class XPathInjectionHandler : IHttpHandler {
-  public void ProcessRequest(HttpContext ctx) {
+    public bool IsReusable => throw new NotImplementedException();
+
+    public void ProcessRequest(HttpContext ctx) {
     string userName = ctx.Request.QueryString["userName"];
 
     // BAD: Use user-provided data directly in an XPath expression
@@ -20,7 +23,7 @@ public class XPathInjectionHandler : IHttpHandler {
 
     // CustomContext is an application specific class, that looks up variables in the
     // expression from the varList.
-    CustomContext context = new CustomContext(new NameTable(), varList)
-    xpath.SetContext(context);
+    //CustomContext context = new CustomContext(new NameTable(), varList);
+    //xpath.SetContext(context);
   }
 }

@@ -1,8 +1,10 @@
+using System.Web;
+
 class ValueShadowingServerVariable
 {
-    public bool isHTTPS(HttpRequest request)
+    public bool IsHttps(HttpRequest request)
     {
-        String https = request["HTTPS"];
+        string https = request["HTTPS"];
         return https == "ON";
     }
 }

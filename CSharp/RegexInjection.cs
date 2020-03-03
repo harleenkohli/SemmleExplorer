@@ -3,8 +3,9 @@ using System.Web;
 using System.Text.RegularExpressions;
 
 public class RegexInjectionHandler : IHttpHandler {
+    public bool IsReusable => throw new NotImplementedException();
 
-  public void ProcessRequest(HttpContext ctx) {
+    public void ProcessRequest(HttpContext ctx) {
     string name = ctx.Request.QueryString["name"];
     string userInput = ctx.Request.QueryString["userInput"];
 

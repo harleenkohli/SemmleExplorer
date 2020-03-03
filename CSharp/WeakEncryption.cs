@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+
 class WeakEncryption
 {
     public static byte[] encryptString()
@@ -7,7 +9,7 @@ class WeakEncryption
         serviceProvider.Key = key;
         ICryptoTransform encryptor = serviceProvider.CreateEncryptor();
 
-        String message = "Hello World";
+        string message = "Hello World";
         byte[] messageB = System.Text.Encoding.ASCII.GetBytes(message);
         return encryptor.TransformFinalBlock(messageB, 0, messageB.Length);
     }

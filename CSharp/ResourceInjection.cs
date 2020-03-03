@@ -2,7 +2,9 @@ using System.Data.SqlClient;
 using System.Web;
 
 public class ResourceInjectionHandler : IHttpHandler {
-  public void ProcessRequest(HttpContext ctx) {
+    public bool IsReusable => throw new System.NotImplementedException();
+
+    public void ProcessRequest(HttpContext ctx) {
     string userName = ctx.Request.QueryString["userName"];
 
     // BAD: Direct use of user input in a connection string passed to SqlConnection

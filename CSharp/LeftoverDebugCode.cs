@@ -6,10 +6,10 @@ namespace LeftoverDebugCode
     class Test
     {
 
-        public static void Main(string[] args) // VIOLATION
-        {
+        //public static void Main(string[] args) // VIOLATION
+        //{
 
-        }
+        //}
 
     }
 

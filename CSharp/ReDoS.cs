@@ -3,8 +3,9 @@ using System.Web;
 using System.Text.RegularExpressions;
 
 public class ReDoSHandler : IHttpHandler {
+    public bool IsReusable => throw new NotImplementedException();
 
-  public void ProcessRequest(HttpContext ctx) {
+    public void ProcessRequest(HttpContext ctx) {
     string userInput = ctx.Request.QueryString["userInput"];
 
     // BAD: User input is matched against a regex with exponential worst case behavior

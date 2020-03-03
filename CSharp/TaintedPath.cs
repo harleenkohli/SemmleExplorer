@@ -3,7 +3,9 @@ using System.IO;
 using System.Web;
 
 public class TaintedPathHandler : IHttpHandler {
-  public void ProcessRequest(HttpContext ctx) {
+    public bool IsReusable => throw new NotImplementedException();
+
+    public void ProcessRequest(HttpContext ctx) {
     String path = ctx.Request.QueryString["path"];
     // BAD: This could read any file on the filesystem.
     ctx.Response.Write(File.ReadAllText(path));

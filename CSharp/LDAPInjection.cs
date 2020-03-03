@@ -1,10 +1,12 @@
-using Microsoft.Security.Application.Encoder
+using Microsoft.Security.Application;
 using System;
 using System.DirectoryServices;
 using System.Web;
 
 public class LDAPInjectionHandler : IHttpHandler {
-  public void ProcessRequest(HttpContext ctx) {
+    public bool IsReusable => throw new NotImplementedException();
+
+    public void ProcessRequest(HttpContext ctx) {
     string userName = ctx.Request.QueryString["username"];
     string organizationName = ctx.Request.QueryString["organization_name"];
     // BAD: User input used in DN (Distinguished Name) without encoding
@@ -15,8 +17,8 @@ public class LDAPInjectionHandler : IHttpHandler {
 
       SearchResult result = ds.FindOne();
       if (result != null) {
-        using (DirectoryEntry user = result.getDirectoryEntry()) {
-          ctx.Response.Write(user.Properties["type"].Value)
+        using (DirectoryEntry user = result.GetDirectoryEntry()) {
+            ctx.Response.Write(user.Properties["type"].Value);
         }
       }
     }
@@ -31,8 +33,8 @@ public class LDAPInjectionHandler : IHttpHandler {
 
       SearchResult result = ds.FindOne();
       if (result != null) {
-        using (DirectoryEntry user = result.getDirectoryEntry()) {
-          ctx.Response.Write(user.Properties["type"].Value)
+        using (DirectoryEntry user = result.GetDirectoryEntry()) {
+            ctx.Response.Write(user.Properties["type"].Value);
         }
       }
     }
